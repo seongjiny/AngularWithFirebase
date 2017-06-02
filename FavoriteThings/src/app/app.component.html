@@ -14,8 +14,10 @@
 <br>
 <button type="button" (click) = "updateColor()"> Update </button>
 <hr>
-<h2> Favorite Number </h2>
-<!--<div id = "box"> Favorite Number </div>-->
+<h2> Favorite Number = {{favoriteNumber}} </h2>
+<button type="button" (click)="setNumber(favoriteNumber + 1)">Up</button>
+<button type="button" (click)="setNumber(favoriteNumber - 1)">Down</button>
+<button type="button" (click)="setNumber(0)">Reset</button>
 
 
 
