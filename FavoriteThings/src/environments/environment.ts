@@ -6,11 +6,11 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: "AIzaSyDZHgntbxIRAE5PIwr0CtXlypkfAd7uB1k",
-    authDomain: "yoons1-default.firebaseapp.com",
-    databaseURL: "https://yoons1-default.firebaseio.com",
-    projectId: "yoons1-default",
-    storageBucket: "yoons1-default.appspot.com",
-    messagingSenderId: "133100004792"
+    apiKey: 'AIzaSyDZHgntbxIRAE5PIwr0CtXlypkfAd7uB1k',
+    authDomain: 'yoons1-default.firebaseapp.com',
+    databaseURL: 'https://yoons1-default.firebaseio.com',
+    projectId: 'yoons1-default',
+    storageBucket: 'yoons1-default.appspot.com',
+    messagingSenderId: '133100004792'
   }
 };

@@ -18,31 +18,30 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    firebase.database().ref().child("color").on('value',
-    (snapshot: firebase.database.DataSnapshot) => { 
+    firebase.database().ref().child('color').on('value',
+    (snapshot: firebase.database.DataSnapshot) => {
       this.favoriteColor = snapshot.val();
      });
-     firebase.database().ref().child("number").on('value',
-    (snapshot: firebase.database.DataSnapshot) => { 
+     firebase.database().ref().child('number').on('value',
+    (snapshot: firebase.database.DataSnapshot) => {
       this.favoriteNumber = snapshot.val();
      });
   }
 
   ngOnDestroy(): void {
-    firebase.database().ref().child("color").off();
-    firebase.database().ref().child("number").off();
+    firebase.database().ref().child('color').off();
+    firebase.database().ref().child('number').off();
   }
 
   setColor(selectedColor: string): void {
-    firebase.database().ref().child("color").set(selectedColor);
+    firebase.database().ref().child('color').set(selectedColor);
   }
 
 /*  updateColor(): void {
     console.log('You selected update');
-    
   }*/
 
   setNumber(favoriteNumber: number): void {
-    firebase.database().ref().child("number").set(favoriteNumber);
+    firebase.database().ref().child('number').set(favoriteNumber);
   }
 }
