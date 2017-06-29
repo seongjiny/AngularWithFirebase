@@ -1,0 +1,19 @@
+.container {
+    width:90%;
+    margin:0 5%;
+}
+.container:first-of-type {
+    margin:50px 5% 20px 5%;
+}
+button { 
+    float:right;
+}
+.content {
+    float:right;
+}
+.head {
+    font-weight: bold;   
+}
+p {
+    font-size:18px;
+}

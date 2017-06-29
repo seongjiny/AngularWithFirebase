@@ -1,0 +1,19 @@
+<md-toolbar color="primary">
+  <span fxHide.xs>Exam 1</span>
+  <span fxHide.xs fxFlex></span>
+  <a md-button [routerLink]="['/list']" routerLinkActive="active">
+     List
+  </a>
+  <a id="random-btn" md-button [mdMenuTriggerFor]="randomMenu"> Random </a>
+  <md-menu [overlapTrigger]="false" #randomMenu="mdMenu">
+    <button md-menu-item [routerLink]="['/random', '2']" routerLinkActive="active">2 (boolean)</button>
+    <button md-menu-item [routerLink]="['/random', '10']" routerLinkActive="active">10</button>
+    <button md-menu-item [routerLink]="['/random', '100']" routerLinkActive="active">100</button>
+    <button md-menu-item [routerLink]="['/random', '1000']" routerLinkActive="active">1000</button>
+  </md-menu>
+  <a md-button [routerLink]="['/signin']" routerLinkActive="active"> Sign In </a>
+</md-toolbar>
+
+
+  <router-outlet></router-outlet>
+

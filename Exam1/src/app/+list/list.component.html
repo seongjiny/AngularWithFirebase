@@ -1,0 +1,27 @@
+<div class="container">
+  <md-card>
+    <form (ngSubmit)="onSubmit()" #AcronymForm="ngForm">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Abbreviation" name="abbr" [(ngModel)]="formAcronym.abbr">
+      </div>
+      <br>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Full name" name="name" [(ngModel)]="formAcronym.name">
+      </div>
+      <button type="submit" class="btn btn-default pull-right">
+        Save
+      </button>
+      <div class="clearfix"></div>
+    </form>
+  </md-card>
+</div>
+<div class="container" *ngFor="let acrynom of (acronymStream | async)">
+  <md-card>
+    <p class="head pull-left">{{acrynom.abbr}} </p>
+    <button class="content" md-icon-button (click)='delete(acrynom.$key)'> 
+      <md-icon> delete </md-icon>
+    </button>
+    <p class="content"> {{acrynom.name}} </p>
+    <div class="clearfix"></div>
+  </md-card>
+</div>
