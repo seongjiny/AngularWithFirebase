@@ -8,6 +8,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PasswordDisplayCardComponent implements OnInit {
   @Input() password: Password;
+  isExpanded = false;
+  
   constructor() { }
 
   ngOnInit() {
