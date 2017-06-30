@@ -1,7 +1,7 @@
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AngularFireModule } from 'angularfire2';
@@ -34,6 +34,8 @@ import {
   MdToolbarModule,
   MdTooltipModule
 } from '@angular/material';
+import { SigninComponent } from './+signin/signin.component';
+import { MainComponent } from './+main/main.component';
 
 
 export const MaterialModules = [
@@ -65,7 +67,9 @@ export const MaterialModules = [
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SigninComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
@@ -76,6 +80,7 @@ export const MaterialModules = [
     AngularFireDatabaseModule, 
     AngularFireAuthModule,
     FlexLayoutModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
