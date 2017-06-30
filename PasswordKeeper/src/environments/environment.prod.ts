@@ -7,5 +7,6 @@ export const environment = {
     projectId: "yoons1-password-keeper",
     storageBucket: "yoons1-password-keeper.appspot.com",
     messagingSenderId: "589880862852",
-  }
+  },
+  rosefireRegistryToken: "f505d053-80d3-42d1-ba76-a6904ad19dbb",
 };

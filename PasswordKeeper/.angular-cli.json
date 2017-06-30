@@ -22,7 +22,9 @@
         "styles.scss",
         "app-theme.scss"
       ],
-      "scripts": [],
+      "scripts": [
+         "../node_modules/rosefire/dist/js/rosefire.min.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
