@@ -14,7 +14,6 @@ import { PasswordDialogComponent } from "app/password-dialog/password-dialog.com
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit, OnDestroy {
-
   private authStateSubscription: Subscription;
   private firebasePath: string;
   passwordStream: FirebaseListObservable<Password[]>;
@@ -24,6 +23,18 @@ export class MainComponent implements OnInit, OnDestroy {
     private router: Router,
     private dialog: MdDialog) {
 
+  }
+
+  get numColumns(): number {
+    if (window.innerWidth < 500) {
+      return 1;
+    } else if (window.innerWidth < 900) {
+      return 2;
+    } else if (window.innerWidth < 1300) {
+      return 3;
+    } else {
+      return 4;
+    }
   }
 
   ngOnInit(): void {
@@ -48,8 +59,7 @@ export class MainComponent implements OnInit, OnDestroy {
   showPasswordDialog(): void {
     console.log("show dialog");
     const dialogConfig = new MdDialogConfig();
-    dialogConfig.data = {firebasePath: this.firebasePath};
-
+    dialogConfig.data = { firebasePath: this.firebasePath };
     this.dialog.open(PasswordDialogComponent, dialogConfig);
   }
 }
