@@ -1,15 +1,16 @@
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { Password } from 'app/modules/password.module';
 import { Component, OnInit, Input } from '@angular/core';
-
+import * as firebase from 'firebase/app';
+import { MdSnackBar } from "@angular/material";
 @Component({
   selector: 'app-password-display-card',
   templateUrl: './password-display-card.component.html',
-  styleUrls: ['../shared/common.scss','./password-display-card.component.scss'],
+  styleUrls: ['../shared/common.scss', './password-display-card.component.scss'],
   animations: [
     trigger('showPassword', [
       state('collapsed', style({
-        height:0,
+        height: 0,
       })),
       state('expanded', style({})),
       // transition('collapsed <=> expanded', animate('.3s'))
@@ -19,15 +20,28 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PasswordDisplayCardComponent implements OnInit {
   @Input() password: Password;
+  @Input() firebasePath: string;
   isExpanded = false;
 
   get showPasswordState(): string {
     return this.isExpanded ? 'expanded' : 'collapsed';
   }
 
-  constructor() { }
+  constructor(private snackBar: MdSnackBar) { }
 
   ngOnInit() {
   }
 
+  edit(): void {
+    console.log("Edit");
+
+  }
+
+  remove(): void {
+    console.log("remove");
+    firebase.database().ref(this.firebasePath).child(this.password.$key).remove();
+    this.snackBar.open("Password removed", "Dismiss", {
+      duration: 3000,
+    });
+  }
 }
