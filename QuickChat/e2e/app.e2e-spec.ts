@@ -1,10 +1,10 @@
-import { RoseRoutingPage } from './app.po';
+import { QuickChatPage } from './app.po';
 
-describe('rose-routing App', () => {
-  let page: RoseRoutingPage;
+describe('quick-chat App', () => {
+  let page: QuickChatPage;
 
   beforeEach(() => {
-    page = new RoseRoutingPage();
+    page = new QuickChatPage();
   });
 
   it('should display welcome message', () => {

@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-export class RoseRoutingPage {
+export class QuickChatPage {
   navigateTo() {
     return browser.get('/');
   }
