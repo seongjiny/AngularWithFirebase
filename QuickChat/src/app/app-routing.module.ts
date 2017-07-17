@@ -1,11 +1,15 @@
+import { MainComponent } from './+main/main.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { SigninComponent } from "app/+signin/signin.component";
+import { MypostsComponent } from "app/+myposts/myposts.component";
 
 const routes: Routes = [
-  {
-    path: '',
-    children: []
-  }
+    { path: '', pathMatch: 'full', component: MainComponent },
+    { path: 'signin', component: SigninComponent },
+    { path: 'myposts', component: MypostsComponent },
+    { path: '**', redirectTo:'' },
+
 ];
 
 @NgModule({
