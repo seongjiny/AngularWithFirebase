@@ -1,3 +1,4 @@
+import { PostService } from './services/post.service';
 import { AuthGuard } from './services/auth.guard';
 import { MypostsComponent } from './+myposts/myposts.component';
 import { FormsModule } from '@angular/forms';
@@ -65,6 +66,9 @@ import { SigninComponent } from './+signin/signin.component';
 import { MainComponent } from './+main/main.component';
 import 'hammerjs';
 import { AuthService } from "app/services/auth.service";
+import { CreatePostComponent } from './+create-post/create-post.component';
+import { PostListComponent } from './+post-list/post-list.component';
+import { PostComponent } from './+post/post.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +76,9 @@ import { AuthService } from "app/services/auth.service";
     SigninComponent,
     MainComponent,
     MypostsComponent,
+    CreatePostComponent,
+    PostListComponent,
+    PostComponent,
   ],
   imports: [
     BrowserModule,
@@ -86,7 +93,8 @@ import { AuthService } from "app/services/auth.service";
   ],
   providers: [
     AuthService,
-    AuthGuard
+    AuthGuard,
+    PostService
   ],
   bootstrap: [AppComponent]
 })
