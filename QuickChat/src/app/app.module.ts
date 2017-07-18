@@ -1,3 +1,4 @@
+import { AuthGuard } from './services/auth.guard';
 import { MypostsComponent } from './+myposts/myposts.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -63,6 +64,7 @@ export const MaterialModules = [
 import { SigninComponent } from './+signin/signin.component';
 import { MainComponent } from './+main/main.component';
 import 'hammerjs';
+import { AuthService } from "app/services/auth.service";
 
 @NgModule({
   declarations: [
@@ -82,7 +84,10 @@ import 'hammerjs';
     FlexLayoutModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
