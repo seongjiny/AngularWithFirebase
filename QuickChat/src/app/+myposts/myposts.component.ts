@@ -1,3 +1,4 @@
+import { PostService } from 'app/services/post.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./myposts.component.scss']
 })
 export class MypostsComponent implements OnInit {
-
-  constructor() { }
+  constructor(private postService: PostService) { }
 
   ngOnInit() {
+    this.postService.showOnlyMyPosts(true);
   }
+
 
 }

@@ -8,13 +8,13 @@
     <div *ngIf="editingMode!=2" class="post-body" fxFlex>{{postWithAuthor.body}} </div>
 
     <md-input-container [class.hide]="editingMode!=2" dividerColor="accent">
-      <input #updatedInputEl mdInput type="text" placeholder="Edit your post" (keyup.endter)="save()" [(ngModel)]="updatedPostBody"
+      <input #updatedInputEl mdInput type="text" placeholder="Edit your post" (keyup.enter)="save()" [(ngModel)]="updatedPostBody"
         name="updatedPostBody">
     </md-input-container>
 
   </div>
   <div *ngIf="editingMode==1" fxLayout="row">
-    <button md-icon-button (click)="enableEdtting(updatedInputEl)">
+    <button md-icon-button (click)="enableEditing(updatedInputEl)">
       <md-icon> edit </md-icon>
     </button>
     <button md-icon-button (click)="remove()">

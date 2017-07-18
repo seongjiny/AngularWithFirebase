@@ -46,7 +46,7 @@ export class PostComponent implements OnInit {
 
   remove() {
     this.postService.remove(this.postWithAuthor.$key);
-    const snackBarRef = this.snackBar.open("Post Removed", "UNOD", {
+    const snackBarRef = this.snackBar.open("Post Removed", "UNDO", {
       duration: 5000,
 
     });
