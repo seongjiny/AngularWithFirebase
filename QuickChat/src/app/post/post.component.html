@@ -1,0 +1,32 @@
+<div class="post" fxLayout="row" fxLayoutAlign="none stretch">
+  <img *ngIf="postWithAuthor.author.photoUrl as photoUrl;else noPhotoTemplate" [src]="photoUrl" alt="Google profile photo">
+  <ng-template #noPhotoTemplate>
+    <img src="/assets/images/missing_photo.png" alt="Missing photo">
+  </ng-template>
+  <div fxFlex fxLayout="column">
+    <div class="author-name" fxFlex> {{postWithAuthor.author.displayName}} </div>
+    <div *ngIf="editingMode!=2" class="post-body" fxFlex>{{postWithAuthor.body}} </div>
+
+    <md-input-container [class.hide]="editingMode!=2" dividerColor="accent">
+      <input #updatedInputEl mdInput type="text" placeholder="Edit your post" (keyup.endter)="save()" [(ngModel)]="updatedPostBody"
+        name="updatedPostBody">
+    </md-input-container>
+
+  </div>
+  <div *ngIf="editingMode==1" fxLayout="row">
+    <button md-icon-button (click)="enableEdtting(updatedInputEl)">
+      <md-icon> edit </md-icon>
+    </button>
+    <button md-icon-button (click)="remove()">
+      <md-icon> delete </md-icon>
+    </button>
+  </div>
+  <div *ngIf="editingMode==2" fxLayout="row">
+    <button [disabled]="updatedPostBody==postWithAuthor.body" md-icon-button (click)="save()">
+      <md-icon> save </md-icon>
+    </button>
+    <button md-icon-button (click)="cancel()">
+      <md-icon> cancel </md-icon>
+    </button>
+  </div>
+</div>

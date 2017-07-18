@@ -1,3 +1,4 @@
+import { AuthorService } from './services/author.service';
 import { PostService } from './services/post.service';
 import { AuthGuard } from './services/auth.guard';
 import { MypostsComponent } from './+myposts/myposts.component';
@@ -66,9 +67,10 @@ import { SigninComponent } from './+signin/signin.component';
 import { MainComponent } from './+main/main.component';
 import 'hammerjs';
 import { AuthService } from "app/services/auth.service";
-import { CreatePostComponent } from './+create-post/create-post.component';
-import { PostListComponent } from './+post-list/post-list.component';
-import { PostComponent } from './+post/post.component';
+import { CreatePostComponent } from './create-post/create-post.component';
+import { PostListComponent } from './post-list/post-list.component';
+import { PostComponent } from './post/post.component';
+import { ReversePipe } from './pipes/reverse.pipe';
 
 @NgModule({
   declarations: [
@@ -79,6 +81,7 @@ import { PostComponent } from './+post/post.component';
     CreatePostComponent,
     PostListComponent,
     PostComponent,
+    ReversePipe,
   ],
   imports: [
     BrowserModule,
@@ -94,7 +97,8 @@ import { PostComponent } from './+post/post.component';
   providers: [
     AuthService,
     AuthGuard,
-    PostService
+    PostService,
+    AuthorService
   ],
   bootstrap: [AppComponent]
 })

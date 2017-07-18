@@ -10,7 +10,9 @@ import { Post } from "app/models/post";
 })
 export class CreatePostComponent implements OnInit {
   postBodyText: string;
-  constructor(public authService: AuthService, private postService: PostService) { }
+  constructor(
+    public authService: AuthService, 
+    private postService: PostService) { }
 
   ngOnInit() {
   }
@@ -18,8 +20,8 @@ export class CreatePostComponent implements OnInit {
   onSubmit(): void {
     try {
       const post = new Post({
-        body: this.postBodyText,
         authorKey: this.authService._currentUsersUid,
+        body: this.postBodyText,
       });
       console.log("TODO", post);
       this.postService.add(post);
