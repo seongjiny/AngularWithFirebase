@@ -18,7 +18,7 @@ import {
   MdButtonModule,
   MdButtonToggleModule,
   MdCardModule,
-  MdCheckboxModule,
+  MdCheckboxModule, 
   MdDialogModule,
   MdGridListModule,
   MdIconModule,

@@ -20,7 +20,7 @@ export class PostService {
 
   postWithAuthorStream: Observable<PostWithAuthor[]>;
   private postIncrementStream: Subject<number>;
-  private isMyPostsPageStream: Subject<boolean>;
+  public isMyPostsPageStream: Subject<boolean>;
 
   public hideLoadMoreBtn = false;
 

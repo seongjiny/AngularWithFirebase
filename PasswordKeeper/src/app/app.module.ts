@@ -34,12 +34,6 @@ import {
   MdToolbarModule,
   MdTooltipModule
 } from '@angular/material';
-import { SigninComponent } from './+signin/signin.component';
-import { MainComponent } from './+main/main.component';
-import { PasswordDialogComponent } from './password-dialog/password-dialog.component';
-import { PasswordDisplayCardComponent } from './password-display-card/password-display-card.component';
-
-
 export const MaterialModules = [
   MdAutocompleteModule,
   MdButtonModule,
@@ -65,6 +59,13 @@ export const MaterialModules = [
   MdToolbarModule,
   MdTooltipModule,
 ];
+import { SigninComponent } from './+signin/signin.component';
+import { MainComponent } from './+main/main.component';
+import { PasswordDialogComponent } from './password-dialog/password-dialog.component';
+import { PasswordDisplayCardComponent } from './password-display-card/password-display-card.component';
+
+
+
 
 
 @NgModule({
