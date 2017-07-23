@@ -1,0 +1,21 @@
+<div fxLayoutAlign="center center">
+  <md-card fxLayout="column" fxLayoutAlign="none center">
+    <!-- <md-card *ngIf="!(authService.isSignedInStream | async); else signedInTemplate" fxLayout="column" fxLayoutAlign="none center"> -->
+    <md-card-title>
+      You must be signed in
+    </md-card-title>
+    <!-- <button id="google-button" md-button (click)="authService.signInWithGoogle()"></button> -->
+    <md-card-content fxLayout="column" fxLayoutAlign="none center">
+      <button id="google-button" md-button></button><br>
+      <button id="rose-button" md-raised-button>Rose-Hulman Login</button>
+    </md-card-content>
+  </md-card>
+  <ng-template #signedInTemplate>
+    <md-card fxLayout="column" fxLayoutAlign="none center">
+      <md-card-title>
+        Signed in as {{authService.displayNameStream | async}}.
+      </md-card-title>
+      <button md-button (click)="authService.signOut()"> Sign Out</button>
+    </md-card>
+  </ng-template>
+</div>
