@@ -1,0 +1,5 @@
+<md-grid-list [cols]="numColumns" gutterSize="10px" rowHeight="300px">
+  <md-grid-tile *ngFor="let photo of (photos | async | reverse)">
+    <app-photo-card fxFlex [photo]=photo [myPage]="myPage"></app-photo-card>
+  </md-grid-tile>
+</md-grid-list>

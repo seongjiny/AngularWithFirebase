@@ -1,10 +1,16 @@
 <md-toolbar color="primary">
   Photo Bucket
-  <span fxFlex> </span>
-
-  <!-- TODO : Hide menu when not logged in and show name  -->
-  <button md-icon-button>
-      <md-icon>menu</md-icon>
+  <span fxFlex> </span> {{authService.displayNameStream | async}}
+  <button *ngIf="authService.isSignedInStream | async" md-icon-button [mdMenuTriggerFor]="signOutMenu">
+      <md-icon>more_vert</md-icon>
   </button>
+
+  <md-menu [overlapTrigger]="false" #signOutMenu="mdMenu">
+    <button md-menu-item (click)="authService.signOut()">Sign Out</button>
+  </md-menu>
 </md-toolbar>
-<router-outlet></router-outlet>
+<div fxLayoutAlign="center center">
+  <div class="container" fxFlex fxFlex.s="500px" fxFlex.md="900px" fxFlex.lg="1300px">
+    <router-outlet></router-outlet>
+  </div>
+</div>
