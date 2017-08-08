@@ -1,7 +1,28 @@
-<md-toolbar color="primary">
-  Hello
-</md-toolbar>
-<button md-icon-button>
-  <md-icon> add</md-icon> 
-</button>
-<router-outlet></router-outlet>
+<md-sidenav-container class="example-container">
+
+  <md-sidenav #sidenav class="example-sidenav">
+    <md-toolbar color="primary">
+      Math
+    </md-toolbar>
+    <md-nav-list>
+      <a md-list-item (click)="sidenav.toggle()" [routerLink]="['/math/6/2']">
+        Math 6/2 </a>
+      <a md-list-item (click)="sidenav.toggle()" [routerLink]="['/math/7/2']">
+        Math 7/2 </a>
+      <a md-list-item (click)="sidenav.toggle()" [routerLink]="['/math/15']">
+        Math 15</a>
+      <hr>
+      <a md-list-item (click)="sidenav.toggle()" [routerLink]="['/']"> Home </a>
+    </md-nav-list>
+  </md-sidenav>
+  <md-toolbar color="primary">
+    <button md-icon-button (click)="sidenav.toggle()">
+      <md-icon>menu</md-icon>
+  </button> Exam 2
+  </md-toolbar>
+  <div fxLayoutAlign="center center" fxLayout="row">
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</md-sidenav-container>
