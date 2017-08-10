@@ -1,0 +1,19 @@
+{
+  "rules": {
+    "quotes": {
+      ".read": true,
+      ".write": true,
+      "$movieuote": {
+        "movie": {
+          ".validate": "newData.isString()"
+        },
+        "quote": {
+          ".validate": "newData.isString()"
+        },
+        "$other": {
+          ".validate": false
+        }
+      }
+    }
+  }
+}

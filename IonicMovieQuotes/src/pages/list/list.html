@@ -1,0 +1,36 @@
+<!--
+  Generated template for the ListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Movie Quote</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showAddQuoteDialog()">
+        <ion-icon name="add"> </ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item-sliding *ngFor="let movieQuote of movieQuoteStream | async | reverse">
+      <button ion-item (click)="pushDetailView(movieQuote)">
+        <h2> {{movieQuote.quote}} </h2>
+        <p> {{movieQuote.movie}} </p>
+      </button>
+      <ion-item-options>
+        <button ion-button color="danger" (click)="removeQuote(movieQuote.$key)">
+          <ion-icon name="trash"></ion-icon>
+          Delete
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
